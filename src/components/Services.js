@@ -1,0 +1,46 @@
+import React, { Component } from 'react'
+import { FaCocktail,FaHiking,FaShuttleVan,FaBeer } from 'react-icons/fa'
+import Title from './Title'
+
+export default class Services extends Component {
+    state = {
+        services: [
+            {
+                icon: <FaCocktail/>,
+                title: 'free cocktails',
+                info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ex erat, pulvinar vel metus et, euismod finibus ipsum. Curabitur et libero quam. Lorem ipsum dolor sit amet'
+            },
+            {
+                icon: <FaHiking/>,
+                title: 'Endless hiking',
+                info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ex erat, pulvinar vel metus et, euismod finibus ipsum. Curabitur et libero quam. Lorem ipsum dolor sit amet'
+            },
+            {
+                icon: <FaShuttleVan/>,
+                title: 'free shuttle',
+                info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ex erat, pulvinar vel metus et, euismod finibus ipsum. Curabitur et libero quam. Lorem ipsum dolor sit amet'
+            },
+            {
+                icon: <FaBeer/>,
+                title: 'strongest beer',
+                info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ex erat, pulvinar vel metus et, euismod finibus ipsum. Curabitur et libero quam. Lorem ipsum dolor sit amet'
+            },
+        ]
+    }
+    render() {
+        return (
+            <section className='services'>
+                <Title title='services' />
+                <div className='services-center'>
+                    {this.state.services.map((item, index) => (
+                        <article key={index} className='service'>
+                            <span>{item.icon}</span>
+                            <h6>{item.title}</h6>
+                            <p>{item.info}</p>
+                        </article>
+                    ))}
+                </div>
+            </section>
+        )
+    }
+}
